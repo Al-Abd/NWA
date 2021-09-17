@@ -82,7 +82,6 @@ function nwaChangeColor() {
         nwaSelect("html").classList.add(localStorage.getItem("nwaColor"));
 }
 
-
 /**
  * @function
  * @name nwaSettingSelectOnChangeEvent

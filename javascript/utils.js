@@ -5,5 +5,5 @@
  * @returns Element
  */
 function nwaSelect(selector) {
-  return document.querySelector(selector);
+    return document.querySelector(selector);
 }

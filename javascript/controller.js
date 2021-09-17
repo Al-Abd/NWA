@@ -177,7 +177,7 @@ function nwaPageFetch(nwaHistoryPushState, controller, action, id) {
  * @returns Void
  */
 function nwaPageFormSubmitAjaxEventMaker() {
-    nwaSelect("main form").addEventListener("submit", function (e) {
+    nwaSelect("main form").addEventListener("submit", (e) => {
         e.preventDefault();
         nwaSelect("main form").classList.add("nwaFromRequested");
         console.groupCollapsed(
