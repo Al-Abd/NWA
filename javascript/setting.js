@@ -121,12 +121,9 @@ function nwaLangChange() {
     //URL cant set in NWA system and must be set in users code.
     nwaAjax({
         method: "GET",
-        url:
-            apiUrl +
-            "/" +
-            apiLangController +
-            "/" +
-            localStorage.getItem("nwaLang"),
+        url: `${apiUrl}/${apiLangController}/${localStorage.getItem(
+            "nwaLang"
+        )}`,
         success: function (status, responseText) {
             localStorage.setItem("translate", responseText);
             console.log("nwa Lang is: " + localStorage.getItem("nwaLang"));
