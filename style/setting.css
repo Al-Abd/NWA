@@ -1,0 +1,47 @@
+html body nav div#nwaNavSetting {
+	justify-content: space-around;
+	margin-top: auto;
+	width: calc(100% - 1.2rem);
+	padding: 0.6rem;
+	opacity: 0.3;
+	transition: opacity 1s;
+}
+html body nav div#nwaNavSetting:hover {
+    opacity: 0.9;
+}
+
+html body nav div#nwaNavSetting select {
+	border: none;
+	height: 2.6rem;
+	padding: 0;
+	margin: 0;
+	line-height: 2.6rem;
+	font-size: 1.2rem;
+}
+
+html body nav div#nwaNavSetting div {
+	margin: 0.2rem;
+	border-radius: 50%;
+	margin-inline-start: 0.5rem;
+	box-shadow: 0 0 0.2rem #7d7d7d;
+	opacity: 0.9;
+}
+html body nav div#nwaNavSetting div:hover {
+    cursor: pointer;
+}
+html body nav div#nwaNavSetting div#nwaNavSettingChangeTheme {
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 0.5rem solid var(--onBackgroundColor);
+	box-shadow: inset 0 0 0.1rem var(--onBackgroundColor);
+	background: var(--backgroundColor);
+}
+html.nwaThemeLight body nav div#nwaNavSetting div#nwaNavSettingChangeTheme,
+html.nwaThemeDark body nav div#nwaNavSetting div#nwaNavSettingChangeTheme {
+	background: var(--onBackgroundColor);
+}
+html body nav div#nwaNavSetting div#nwaNavSettingChangeColor {
+	width: 2.2rem;
+	height: 2.2rem;
+	background: linear-gradient(110deg, var(--primaryColor) 60%, var(--secondaryColor) 60%);
+}

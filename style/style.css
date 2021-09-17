@@ -1,0 +1,414 @@
+@font-face {
+    font-family: 'Yekan';
+    src: url('https://cdn.cleveraj.net/fonts/WebYekan.eot');
+    src: url('https://cdn.cleveraj.net/fonts/WebYekan.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.woff') format('woff'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.ttf') format('truetype'),
+         url('https://cdn.cleveraj.net/fonts/WebYekan.svg#WebYekan') format('svg');
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%; /* 10px = 1rem */
+	font-family: Tahoma;
+	direction: ltr;
+}
+html[dir=rtl] {direction: rtl;}
+html[lang=fr] {font-family: "Yekan", Tahoma;}
+
+body, header, main, footer, nav, article, section, div, form, ul, li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+body, main {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+body {
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+    background: var(--backgroundColor);
+    color: var(--onBackgroundColor);
+}
+body .nwaBeta,
+body .nwaAlpha {
+	display: none;
+}
+body.nwaBeta .nwaBeta {
+	display: flex;
+}
+body.nwaAlpha .nwaBeta,
+body.nwaAlpha .nwaAlpha {
+	display: flex;
+}
+article {
+	width: 100%;
+	padding-bottom: 0.5rem;
+	border-bottom: 0.1rem solid #7d7d7d30;
+	margin-bottom: 1rem;
+}
+article:last-child {
+	border: none;
+}
+article.container {
+    max-Width: 50rem;
+    margin: auto;
+}
+
+
+svg {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+hr {
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    margin: 0.3rem 0;
+    border: 0;
+    background: var(--secondaryVariantColor);
+}
+
+
+
+h1,h2,h3,h4,h5 {
+    display: inline-block;
+    margin: 0;
+    margin-inline-end: auto;
+    font-weight: normal;
+}
+h1 {
+    line-height: 4rem;
+    font-size: 2.0rem;
+}
+h2 {
+    line-height: 4rem;
+    font-size: 1.9rem;
+}
+h3 {
+    line-height: 3.2rem;
+    font-size: 1.8rem;
+}
+h4 {
+    line-height: 3.2rem;
+    font-size: 1.6rem;
+}
+h5 {
+    line-height: 2.4rem;
+    font-size: 1.5rem;
+}
+a {
+	color: var(--primaryColor);
+	text-decoration: underline;
+}
+a:hover,
+a:active {
+	cursor: pointer;
+	color: var(--secondaryColor);
+}
+code {
+	display: block;
+	padding: 1rem;
+	margin: 0.5rem 0;
+	border-radius: 0.5rem;
+	font-size: 1.6rem;
+	background: #7d7d7d7d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Template */
+
+/* Header */
+body header {
+	display: none;
+	align-items: center;
+	width: calc(100% - 2rem);
+	height: 5rem;
+	padding: 0 1rem;
+	border-bottom: 0.1rem solid #7d7d7d40;
+	background: var(--headerColor);
+	color: var(--onHeaderColor);
+	user-select: none;
+}
+body.nwaHeader header {
+	display: flex;
+}
+html[dir=rtl] button#nwaHeaderBackButton svg {transform: scale(-1,1);}
+body #nwaHeaderNavButton {display: none;}
+body #nwaHeaderBackButton {display: block;}
+body.nwaNav #nwaHeaderNavButton {display: block;}
+body.nwaNav #nwaHeaderBackButton {display: none;}
+body header svg line {stroke: var(--onHeaderColor);}
+body header svg circle {fill: var(--onHeaderColor);}
+body header svg circle[stroke-width] {fill: none; stroke: var(--onHeaderColor);}
+body header button {color: var(--onHeaderColor);}
+body header img {
+	width: 3.2rem;
+	height: 3.2rem;
+	margin: 1rem;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.4rem #7d7d7d40;
+	background: #FFF;
+}
+@media (pointer: fine) {
+	body header img:hover {
+		box-shadow: 0 0 0 0.4rem #7d7d7d60;
+    	cursor: pointer;
+	}
+}
+
+
+
+/* Main */
+body.load main {
+	display: none;
+}
+body main {
+	width: 100%;
+	height: 100%;
+	transition: width 0.3s, margin-inline-end 0.3s;
+}
+body.nwaHeader main {
+	width: calc(100% - 2rem);
+	height: calc(100% - 2rem - 5.1rem);
+	padding: 1rem;
+}
+body.nwaFooter main {
+	height: calc(100% - 2rem - 5.1rem - 5.1rem);
+}
+body.nwaNav.nwaNavActive main {
+	width: calc(100% - 2rem - 22rem);
+}
+body.nwaNav.nwaAsideActive main {
+	width: calc(100% - 2rem - 22rem);
+	margin-inline-end: 22rem;
+}
+body.nwaNav.nwaNavActive.nwaAsideActive main {
+	width: calc(100% - 2rem - 22rem - 22rem);
+	margin-inline-end: 22rem;
+}
+@media screen and (max-width: 1000px) {
+	body.nwaNav.nwaNavActive main,
+	body.nwaNav.nwaAsideActive main {
+		width: calc(100% - 1rem);
+		margin-inline-end: 0;
+	}
+}
+body main svg line {stroke: var(--onBackgroundColor);}
+body main svg circle {fill: var(--onBackgroundColor);}
+body main svg circle[stroke-width] {
+    fill: none;
+    stroke: var(--onBackgroundColor);
+}
+
+
+/* Loading Screen */
+body.load::before {
+	position: fixed;
+	top: calc(50% - 3rem);
+	left: calc(50% - 1rem);
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	box-shadow: 0 0 0.3rem 0.3rem #7d7d7d, inset 0 0 0.3rem #7d7d7d;
+	content: "";
+	animation: scale 0.8s ease alternate infinite;
+}
+@keyframes scale {50% {transform: scale(1.0);} 100% {transform: scale(1.15);}}
+body.load::after {
+	position: fixed;
+	top: calc(50% + 1rem);
+	left: 5%;
+	display: block;
+	width: 90%;
+	content: attr(nwa-load-massage);
+	text-align: center;
+	color: #7d7d7d;
+}
+
+
+
+/* Footer */
+body footer {
+	position: fixed;
+	bottom: 0;
+	display: none;
+	align-items: center;
+	width: 90%;
+	height: 5rem;
+	padding: 0 5%;
+	border-top: 0.1rem solid #7d7d7d40;
+	font-family: arial;
+	background: var(--surfaceColor);
+	color: var(--onSurfaceColor);
+	transition: width 0.3s;
+	user-select: none;
+}
+body.nwaFooter footer {
+	display: flex;
+}
+body.nwaNav.nwaNavActive footer {
+	width: calc(100% - 10% - 22rem);
+}
+@media screen and (max-width: 1000px) {
+	body.nwaNav.nwaNavActive footer {
+    	width: 90%;
+	}
+}
+body footer svg line {stroke: var(--onSurfaceColor);}
+body footer svg circle {fill: var(--onSurfaceColor);}
+body footer svg circle[stroke-width] {fill: none; stroke: var(--onSurfaceColor);}
+body footer button.nwaActive svg line {stroke: var(--secondaryColor);}
+body footer button.nwaActive svg circle {fill: var(--secondaryColor);}
+body footer button.nwaActive svg circle[stroke-width] {fill: none; stroke: var(--secondaryColor);}
+body footer small {
+    margin-inline-start: auto;
+    font-size: 1rem;
+    color: #7d7d7d7d;
+}
+body footer small a {
+    color: inherit;
+}
+@media screen and (max-width: 800px) {
+    body footer {
+        justify-content: space-around;
+    }
+    body footer small {
+        display: none;
+    }
+}
+
+
+
+
+
+/* Nav */
+body nav,
+body aside {
+	position: fixed;
+	top: 5.1rem;
+	display: none;
+	flex-direction: column;
+	width: 21.9rem;
+	line-height: 3.2rem;
+	overflow-y: auto;
+	background: var(--backgroundColor);
+	color: var(--onBackgroundColor);
+	transition: right 0.3s, left 0.3s;
+	z-index: 1;
+	user-select: none;
+}
+body.nwaNav nav {
+	display: flex;
+}
+body nav {
+	height: calc(100% - 5.1rem);
+	border-inline-end: 0.1rem solid #7d7d7d40;
+}
+body aside {
+	display: flex;
+	height: calc(100% - 5.1rem - 5.1rem);
+	border-inline-start: 0.1rem solid #7d7d7d40;
+}
+
+html body nav {left: -22rem;}
+html body.nwaNavActive nav {left: 0;}
+html[dir='rtl'] body nav {left: initial; right: -22rem;}
+html[dir='rtl'] body.nwaNavActive nav {right: 0;}
+
+html body aside {right: -22rem;}
+html body.nwaAsideActive aside {right: 0;}
+html[dir='rtl'] body aside {right: initial; left: -22rem;}
+html[dir='rtl'] body.nwaAsideActive aside {left: 0;}
+
+@media screen and (max-width: 1000px) {
+	body nav,
+	body aside {
+    	top: 0;
+    	height: 100%;
+	}
+	html body.nwaNavActive::before,
+	html body.nwaAsideActive::before {
+		display: none;
+	}
+	html body.nwaNavActive::after,
+	html body.nwaAsideActive::after {
+    	position: fixed;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	display: block;
+    	width: 100%;
+    	height: 100%;
+    	content: "";
+    	background: #000;
+    	opacity: 0.4;
+	}
+}
+@media screen and (max-width: 250px) {
+	body nav,
+	body aside {
+    	width: 90%;
+	}
+	html[dir='ltr'] body nav,
+	html[dir='ltr'] body aside {
+    	left: -90%;
+	}
+	html[dir='rtl'] body nav,
+	html[dir='rtl'] body aside {
+		right: -90%;
+	}
+}
+body nav svg line {stroke: var(--onBackgroundColor);}
+body nav svg circle {fill: var(--onBackgroundColor);}
+body nav svg circle[stroke-width] {
+    fill: none;
+    stroke: var(--onBackgroundColor);
+}
+
+
+
+body nav ul {
+	width: 90%;
+	margin-inline-start: auto;
+	line-height: 3rem;
+}
+body nav > ul {
+	width: 100%
+}
+body nav ul li {
+	width: 100%;
+}
+body nav ul li a {
+	width: 90%;
+	padding: 0 5%;
+}
