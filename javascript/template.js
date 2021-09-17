@@ -1,10 +1,14 @@
 //Auto toggle nav depends on screen size when screen size changed
-window.onresize = function() {
+window.onresize = () => {
 	nwaAutoToggleNav();
 	nwaAutoToggleAside();
 }
 
-//Auto Toggle Nav depends on screen size
+/** 
+ * @name nwaAutoToggleNav
+ * @description Auto toggle nav depends on screen size
+ * @returns Void
+ */
 function nwaAutoToggleNav() {
 	if (nwaSelect('body').classList.contains('nwaNav'))
 		if (window.innerWidth <= 1440)
@@ -14,6 +18,11 @@ function nwaAutoToggleNav() {
 	else
 		nwaSelect('body').classList.remove('nwaNavActive');
 }
+
+/** 
+ * @name nwaAutoToggleAside
+ * @returns Void
+ */
 function nwaAutoToggleAside() {
 	if (nwaSelect('body main').getElementsByTagName('aside').length > 0)
 		if (window.innerWidth <= 1220)
@@ -25,7 +34,7 @@ function nwaAutoToggleAside() {
 }
 
 //Close Nav onClick outside of nav
-window.addEventListener('click', function(event) {
+window.addEventListener('click', (event) => {
   	if (window.innerWidth <= 1000)
 		if (!nwaSelect('body nav').contains(event.target) && !nwaSelect('body header').contains(event.target) && !nwaSelect('body main').contains(event.target)) {
 			nwaSelect('body').classList.remove('nwaNavActive');
