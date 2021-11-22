@@ -118,7 +118,7 @@ function nwaLangChange() {
     nwaSelect('nav select[name="nwaLang"]').value =
         localStorage.getItem('nwaLang');
 
-    //URL cant set in NWA system and must be set in users code.
+    //apiUrl cant set in NWA system and must be set in users code.
     nwaAjax({
         method: 'GET',
         url: `${apiUrl}/nwaLanguage/${localStorage.getItem('nwaLang')}`,
@@ -141,15 +141,19 @@ function nwaLangChange() {
  */
 function nwaLangTranslate() {
     responseObject = JSON.parse(localStorage.getItem('translate'));
-    var i = 1;
-    for (i in responseObject) {
-        if (
-            responseObject[i].selector != '' &&
-            nwaSelect(responseObject[i].selector)
-        )
-            nwaSelect(responseObject[i].selector).innerHTML =
-                responseObject[i].trans + '<br>';
-    }
+    // var i = 1;
+    // for (i in responseObject) {
+    //     if (
+    //         responseObject[i].selector != '' &&
+    //         nwaSelect(responseObject[i].selector)
+    //     )
+    //         nwaSelect(responseObject[i].selector).innerHTML =
+    //             responseObject[i].trans + '<br>';
+    // }
+    nwaSelect(responseObject[1].selector).innerHTML =
+        responseObject[1].trans + '<br>';
+    nwaSelect(responseObject[2].selector).innerHTML =
+        responseObject[2].trans + '<br>';
 }
 
 /**
