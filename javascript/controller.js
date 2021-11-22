@@ -162,7 +162,9 @@ function nwaAjax(object) {
 
     nwaHttp.onreadystatechange = function() {
         if (this.readyState == 4) {
-            console.log('Server ' + this.status + ': '+this.responseText);
+            console.group('Server ' + this.status + ': ');
+            console.log(this.responseText);
+            console.groupEnd('Server ' + this.status + ': ');
             if (this.status < 300 && this.status != 0) {
                 if (typeof object.success === 'function')
                     if (typeof object.reference !== 'undefined')
