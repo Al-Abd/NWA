@@ -36,7 +36,7 @@ function nwaLoadPageFromUrl() {
 }
 
 //Load any page
-function nwaPageFetch(nwaHistoryPushState,controller,action,id) {
+function nwaPageFetch(nwaHistoryPushState, controller, action, id) {
     //Check for internet connection
     if (!navigator.onLine) {
     	alert('Check Your Internet Connection!');
@@ -149,7 +149,6 @@ function nwaPageFormSubmitAjaxEventMaker() {
 //*****************************************************************************
 //AJAX TO SERVER
 function nwaAjax(object) {
-    console.time('Ajax time');
     var nwaHttp = new XMLHttpRequest();
 
     nwaHttp.open(object.method, object.url, true);
@@ -164,7 +163,6 @@ function nwaAjax(object) {
     nwaHttp.onreadystatechange = function() {
         if (this.readyState == 4) {
             console.log('Server ' + this.status + ': '+this.responseText);
-            console.timeEnd('Ajax time');
             if (this.status < 300 && this.status != 0) {
                 if (typeof object.success === 'function')
                     if (typeof object.reference !== 'undefined')
