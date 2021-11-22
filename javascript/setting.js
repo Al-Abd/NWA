@@ -142,7 +142,7 @@ function nwaLangChange() {
 function nwaLangTranslate() {
 	responseObject = JSON.parse(localStorage.getItem('translate'));
 	responseObject.forEach(element => {
-		if (nwaSelect(element.selector))
+		if (responseObject[i].selector != '' && nwaSelect(element.selector))
 			nwaSelect(element.selector).innerHTML = element.phrase;
 	});
 	// var i = 1;
