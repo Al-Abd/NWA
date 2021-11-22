@@ -141,20 +141,14 @@ function nwaLangChange() {
  */
 function nwaLangTranslate() {
 	responseObject = JSON.parse(localStorage.getItem('translate'));
-	// var i = 1;
-	// for (i in responseObject) {
-	// 	if (
-	// 		responseObject[i].selector != '' &&
-	// 		nwaSelect(responseObject[i].selector)
-	// 	)
-	// 		nwaSelect(responseObject[i].selector).innerHTML =
-	// 			responseObject[i].trans + '<br>';
-	// }
-	responseObject.forEach(myFunction);
-}
-function myFunction(item) {
-	sum += item;
-	nwaSelect(item.selector).innerHTML = item.phrase;
+	var i = 1;
+	for (i in responseObject) {
+		if (
+			responseObject[i].selector != '' &&
+			nwaSelect(responseObject[i].selector)
+		)
+			nwaSelect(responseObject[i].selector).innerHTML = responseObject[i].phrase;
+	}
 }
 
 /**
