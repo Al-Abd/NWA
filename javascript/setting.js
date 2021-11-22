@@ -90,7 +90,7 @@ function nwaChangeColor() {
  * @returns Void
  */
 function nwaSettingSelectOnChangeEvent(selectName) {
-	var selectSelector = nwaSelect('nav select[name="" + selectName + ""]');
+	var selectSelector = nwaSelect('nav select[name="' + selectName + '"]');
 	var selectValue =
 		selectSelector.options[selectSelector.selectedIndex].value;
 	localStorage.setItem(selectName, selectValue);
